@@ -1,21 +1,87 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <title>Panel de acceso a la cuenta</title>
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/scrollbar.css" />
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <script src="../lib/jquery-3.1.1.min.js"></script>
-        <script src="../lib/bootstrap.min.js"></script>
-    </head>
-    <body class="background col-lg-12">
-        <form class="col-lg-3 center-block panel vertical-center">
-            <div class="panel-heading login-heading"><img class="logo" src="../img/login/logo.png" /></div>
-            <p class="text-center">Bienvenido de nuevo a WiredPlayers. Para acceder al servidor, es necesario que ingreses tu contraseña</p>
-            <div class="col-lg-8 col-lg-offset-2"><input id="pass" class="form-control center-block pass-field" type="password" placeholder="Contraseña" required="required" autofocus/></div>
-            <div class="col-lg-6 col-lg-offset-3"><button id="register" class="btn btn-primary form-control center-block" onclick="loginAccount();">Acceder</button></div>
-        </form>
-    </body>
-    <script src="../js/functions.js"></script>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/general.css">
+  <link rel="stylesheet" href="../css/scrollbar.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body class="background col-lg-12">
+ 
+ 
+ 
+<div class="newsbox" style="display: none;
+  color: #fff;
+  font-family: &quot;Source Sans Pro&quot;;
+  width: 30%;
+  margin: 50px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+ 
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 100%); 
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.05) 100%); 
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.05) 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#0dffffff',GradientType=0 );">
+  <h1 style="text-transform: uppercase;
+  margin: 0;
+  margin-top:  -50px;
+  margin-bottom: 10px;
+  text-align: center;">News</h1>
+  <div class="text">
+    The launcher issues have been fixed. Please download the launcher v6. Read more about using this website.
+  </div>
+</div>
+
+ <div class="newsbox right" style="display: inline-block; color: #fff; font-family: &quot;Source Sans Pro&quot;; width: 30%; margin-top: 50px; margin-right: 50px; margin-left: 50px; margin-bottom: 50px; padding: 30px; position: relative; text-align: center; background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 100%); background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.05) 100%); background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.05) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#0dffffff',GradientType=0 );">
+  <h1 style="text-transform: uppercase;
+  margin: 0;
+  margin-top:  -50px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #007BFF">News</h1>
+  <div class="text">
+    Patch 1.1.0 is Out now! <br> Check the Patchnotes at our Website.
+  </div>
+</div>
+ 
+ 
+  <div class="col-lg-3 card card-body vertical-center">
+      <div class="panel-heading login-heading"><img class="logo" src="../img/login/logo2.png" />
+      </div>
+	  <br>
+      <p id="login" class="card-text" data-i18n="login.message"></p>
+      <input id="pass" class="form-control center-block pass-field" type="password" data-i18n="[placeholder]general.password" required="required" autofocus/>
+      <div id="error" class="alert alert-danger d-none" role="alert" data-i18n="login.error"></div>
+      <div class="row justify-content-center">
+        <button id="register" type="button" class="btn btn-primary text-center" data-i18n="general.access" onclick="loginAccount()"></button>
+      </div>
+  </div>
+  
+  
+   
+  
+  
+
+  <script>
+    document.getElementById('pass').addEventListener('keyup', function(event) {
+      // Cancel the default action
+      event.preventDefault();
+
+      if (event.keyCode === 13) {
+        // Submit the login form
+        document.getElementById('register').click();
+      }
+    });
+  </script>
+
+</body>
+
+<script src="../lib/jquery-3.1.1.min.js"></script>
+<script src="../lib/bootstrap.min.js"></script>
+<script src="../lib/i18next.min.js"></script>
+<script src="../lib/jquery-i18next.min.js"></script>
+<script src="../lib/i18nextXHRBackend.min.js"></script>
+<script src="../js/functions.js"></script>
+
 </html>
